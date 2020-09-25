@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'post_container.dart';
+
 import 'NavigationsButton.dart';
+import 'post_container.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -12,7 +14,9 @@ class _ProfileState extends State<Profile> {
   Expanded profile_button(String button_name) {
     return Expanded(
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          print('me');
+        },
         child: Column(
           children: <Widget>[
             Container(
@@ -109,29 +113,24 @@ class _ProfileState extends State<Profile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                  // margin: EdgeInsets.symmetric(
-                  //     vertical: 20.0, horizontal: 10.0),
-
-                  onPressed: () {},
-                  color: Colors.lightBlueAccent[700],
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 15,
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        'Friends',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
+                FriendButton(
+                    state
+                        ? Text(
+                            "Friends",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        : Text(
+                            "Follow",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                    state
+                        ? Icon(Icons.check, color: Colors.white)
+                        : Icon(
+                            Icons.add,
+                            color: Colors.black,
+                          ),
+                    state ? Colors.blueAccent : Colors.white,
+                    changeState),
                 SizedBox(
                   width: 20,
                 ),
@@ -180,6 +179,33 @@ class _ProfileState extends State<Profile> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class FriendButton extends StatelessWidget {
+  final Function onPressed;
+  final Text friendStatus;
+  final Icon friendStatusIcon;
+  final Color friendStatusColor;
+
+  FriendButton(this.friendStatus, this.friendStatusIcon, this.friendStatusColor,
+      this.onPressed);
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: onPressed,
+      color: friendStatusColor,
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          friendStatusIcon,
+          SizedBox(width: 5),
+          friendStatus,
+        ],
       ),
     );
   }
