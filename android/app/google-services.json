@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "153389389135",
+    "project_id": "facelink1-81c5f",
+    "storage_bucket": "facelink1-81c5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153389389135:android:6bcd38669cac53c09ee13a",
+        "android_client_info": {
+          "package_name": "com.utsav.facelink1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153389389135-5vp74snpdlmo7q5p2vgr13boog9n6gng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.utsav.facelink1",
+            "certificate_hash": "0c7058dd884416af885a58688941dbfaed94b3f4"
+          }
+        },
+        {
+          "client_id": "153389389135-jk3e5u7osi8hgfpp2egak3fbciu4vt0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcefUBCj8EnR-idmOjt1Iws6LxH6iCEzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153389389135-jk3e5u7osi8hgfpp2egak3fbciu4vt0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
